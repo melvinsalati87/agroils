@@ -15,6 +15,17 @@ Route::prefix('v1')->group(function () {
  **
  */
 
-Route::prefix('v1')->group(function () {
-    Route::get('/users',[UserController::class,'index']);
-})->middleware(['auth:sanctum']);
+Route::prefix('v1/user')->middleware(['auth:sanctum'])->group(function () {
+    Route::get('/',[UserController::class,'index']);
+    Route::post('{creator_uuid}/create/',[UserController::class,'create']);
+});
+
+/**
+ *  protected with sanctum
+ *  otp verification
+ *
+ */
+
+Route::prefix('v1/verify-token/')->middleware(['auth:sanctum'])->group(function () {
+    Route::post('/otp',[UserController::class,'verifyToken']);
+});

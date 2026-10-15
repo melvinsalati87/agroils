@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2d9988748747385a3a713e8253434bb",
+    "content-hash": "3c2ff09f7f738bfb5bd990c7d9d61db4",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -734,6 +734,121 @@
                 }
             ],
             "time": "2025-12-03T09:33:47+00:00"
+        },
+        {
+            "name": "gowa-php/laravel",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gowa-PHP/laravel.git",
+                "reference": "721f0cb6cb1c27b7402ad726312e397cf9b14462"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gowa-PHP/laravel/zipball/721f0cb6cb1c27b7402ad726312e397cf9b14462",
+                "reference": "721f0cb6cb1c27b7402ad726312e397cf9b14462",
+                "shasum": ""
+            },
+            "require": {
+                "gowa-php/sdk": "^1.5",
+                "illuminate/contracts": "^10.0|^11.0|^12.0|^13.0",
+                "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.95",
+                "orchestra/testbench": "^8.0|^9.0|^10.0|^11.0",
+                "pestphp/pest": "^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Gowa": "Gowa\\Laravel\\Facades\\Gowa"
+                    },
+                    "providers": [
+                        "Gowa\\Laravel\\GowaServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gowa\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aguinaldo Tupy",
+                    "email": "aguinaldo.tupy@gmail.com"
+                }
+            ],
+            "description": "Laravel integration for GOWA — GowaClient Facade, Notification Channel, Webhook routing, and Eloquent models",
+            "support": {
+                "issues": "https://github.com/Gowa-PHP/laravel/issues",
+                "source": "https://github.com/Gowa-PHP/laravel/tree/v1.3.0"
+            },
+            "time": "2026-09-11T18:02:40+00:00"
+        },
+        {
+            "name": "gowa-php/sdk",
+            "version": "v1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gowa-PHP/sdk.git",
+                "reference": "a3744fc00b752c6cdd81878602f1e69843c30533"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gowa-PHP/sdk/zipball/a3744fc00b752c6cdd81878602f1e69843c30533",
+                "reference": "a3744fc00b752c6cdd81878602f1e69843c30533",
+                "shasum": ""
+            },
+            "require": {
+                "ext-hash": "*",
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.8 || ^8.0",
+                "php": "^8.2",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.95",
+                "pestphp/pest": "^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gowa\\Sdk\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aguinaldo Tupy",
+                    "email": "aguinaldo.tupy@gmail.com"
+                }
+            ],
+            "description": "Pure PHP SDK for the go-whatsapp-web-multidevice (GOWA) server",
+            "support": {
+                "issues": "https://github.com/Gowa-PHP/sdk/issues",
+                "source": "https://github.com/Gowa-PHP/sdk/tree/v1.7.0"
+            },
+            "time": "2026-09-25T22:09:01+00:00"
         },
         {
             "name": "graham-campbell/result-type",

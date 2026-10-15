@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\PasskeyUser;
 use Laravel\Fortify\PasskeyAuthenticatable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -36,11 +37,37 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, PasskeyAuthenticatable, TwoFactorAuthenticatable, HasApiTokens;
 
+    protected $fillable = [
+        'name',
+        'first_name',
+        'middle_name',
+        'last_name',
+        'username',
+        'email',
+        'password',
+        'mobile_phone_number',
+        'gender',
+        'date_of_birth',
+        'user_type',
+        'created_by',
+    ];
+
+
     /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
      */
+
+
+   protected static function booted()
+   {
+       static::creating(function ($user) {
+           if(empty($user->user_uuid)){
+               $user->user_uuid= Str::uuid();
+           }
+       });
+   }
 
     protected function casts(): array
     {

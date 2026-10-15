@@ -16,4 +16,12 @@ class UserService
     public function login(string $email, string $password){
         return $this->userRepository->authenticate($email, $password);
     }
+
+    public function createUser(array $data){
+        return $this->userRepository->create($data);
+    }
+
+    public function verify($token){
+        return $this->userRepository->verifyOtpToken($token);
+    }
 }
